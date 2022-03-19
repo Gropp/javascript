@@ -1,0 +1,1 @@
+alert("chamada de arquivo externo");
