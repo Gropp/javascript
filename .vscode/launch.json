@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://console.log(verificaPalindromoNew(\"abba\"));",
+            "request": "launch",
+            "url": "http://console.log(verificaPalindromoNew(\"abba\"));"
+        }
+    ]
+}
