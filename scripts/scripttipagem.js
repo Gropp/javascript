@@ -1,7 +1,7 @@
 // var - global e local
 // variavel boolean
 var vOuF = false;
-console.log(vOuF)
+console.log(vOuF);
 
 // variavel numerica
 var numeroQualquer = 1;
