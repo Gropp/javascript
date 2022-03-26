@@ -47,6 +47,8 @@ class ContaBancaria {
 }
 
 // classe filha ContaCorrente
+// tem que colocar a palavra reservada extends para dizer que essa classe é uma extensao de outra
+// indicar a classe pai
 
 class ContaCorrente extends ContaBancaria{
     // no construtor da classe filha iremos chamar propriedades da classe pai e propriedades da classe filha
