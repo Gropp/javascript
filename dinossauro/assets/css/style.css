@@ -1,0 +1,52 @@
+body {
+  background: #fafafa;
+  font-family:'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.dino {
+  /* ? elemento fica em uma posicao absoluta independente do que tenha em volta */
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+  background-image: url('/dinossauro/assets/img/dino.png');
+  width: 60px;
+  height: 60px;
+}
+
+/* ? classe utilizada no js para criar os cactos do jogo */
+.cactus {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
+  background-image: url('/dinossauro/assets/img/cactus.png');
+}
+
+.game-over {
+  text-align: center;
+  color: rgb(51, 34, 143);
+  margin: 300px 0;
+}
+
+@keyframes slideright {
+  from {
+      background-position: 70000%;
+  }
+  to {
+      background-position: 0%;
+  }
+}
+
+.background {
+  position: absolute;
+  bottom: 50px;
+  background-image: url('/dinossauro/assets/img/background.png');
+  /* propriedade para repetir o fundo no eixo x */
+  background-repeat: repeat-x;
+  /* cria uma animacao a cada 600s linear e infinita do keyframe slideright */
+  animation: slideright 600s infinite linear;
+  -webkit-animation: slideright 600s infinite linear;
+  width: 100%;
+  height: 200px;
+}
