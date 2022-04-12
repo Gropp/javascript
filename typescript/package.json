@@ -1,0 +1,15 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "Projeto DIO - web fullstack",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernando Gropp",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.3.1"
+  }
+}
