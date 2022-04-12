@@ -3,7 +3,7 @@
 // sao constantes pois essas posicoes nao irao mudar
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
-const area = document.querySelector('.area');
+const placar = document.querySelector('.placar');
 
 // inicializa as flags de jumping e gameover
 // essas flags evitam que vc pule enquanto esta pulando
@@ -11,6 +11,7 @@ const area = document.querySelector('.area');
 let isJumping = false;
 let isGameOver = false;
 let position = 0;
+let pontos = 0;
 
 // funcao para testar quando a tecla pressionada se levantou
 function handleKeyUp(event) {
@@ -18,6 +19,7 @@ function handleKeyUp(event) {
   // keycode.info 
   if (event.keyCode === 32) {
     if (!isJumping) {
+      // ? chama a função jump()
       jump();
     }
   }
@@ -71,7 +73,7 @@ function createCactus() {
   // posiciona o cactus a direita da tela posicao 1000px
   let cactusPosition = 1000;
   // cria um valor randomico de até 6000 milisegundos para criar os cactus 
-  let randomTime = Math.random() * 6000;
+  let randomTime = Math.random() * 6000; 
 
   // testa se nao acabou o joga antes de dar spawn em novos cactus
   // se o jogo acabou ele sai do loop
@@ -93,6 +95,10 @@ function createCactus() {
       clearInterval(leftTimer);
       // remove o elemento cactus da html
       background.removeChild(cactus);
+      // marca a pontuacao
+      pontos = pontos + 100;
+      placar.innerHTML = pontos;
+
       // aqui ele testa se a posicao do cactus e a posicao do dinossauro estao se sobrepondo
       // alterei a posicao para 80 pois dei 20px de margem esquerda no dino no css
     } else if (cactusPosition > 0 && cactusPosition < 80 && position < 60) {
@@ -102,7 +108,7 @@ function createCactus() {
       // seta o flag para true
       isGameOver = true;
       // modifica todo o corpo do html para mostrar essa mensagem
-      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+      document.body.innerHTML = `<h1 class="game-over">Fim de jogo <br/><br/> Você conseguiu ${pontos} pontos</h1>`;
       // se o cactus nao sair da tela, continua andando
     } else {
       // aqui é o px de deslocamento do cactus para a esquerda
@@ -118,5 +124,7 @@ function createCactus() {
   setTimeout(createCactus, randomTime);
 }
 
+// coloca a pontuacao no jogo
+placar.innerHTML = pontos;
 createCactus();
 document.addEventListener('keyup', handleKeyUp);

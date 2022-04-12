@@ -4,12 +4,21 @@ body {
   overflow: hidden;
 }
 
+.placar {
+  /* mostra a pontuacao do jogo */
+  position: absolute;
+  font-size: larger;
+  font-weight: 600;
+  bottom: 200px;
+  right: 100px;
+}
+
 .dino {
   /* ? elemento fica em uma posicao absoluta independente do que tenha em volta */
   position: absolute;
   bottom: 0;
   margin-left: 20px;
-  background-image: url('/dinossauro/assets/img/dino.png');
+  background-image: url('/assets/img/dino.png');
   width: 60px;
   height: 60px;
 }
@@ -20,15 +29,16 @@ body {
   width: 60px;
   height: 60px;
   bottom: 0;
-  background-image: url('/dinossauro/assets/img/cactus.png');
+  background-image: url('/assets/img/cactus.png');
 }
 
 .game-over {
   text-align: center;
-  color: rgb(51, 34, 143);
-  margin: 300px 0;
+  color: gray;
+  margin: 250px 0;
 }
 
+/* define etapas de uma animacao - deslizar para a direita */
 @keyframes slideright {
   from {
       background-position: 70000%;
@@ -41,12 +51,13 @@ body {
 .background {
   position: absolute;
   bottom: 50px;
-  background-image: url('/dinossauro/assets/img/background.png');
+  /* imagem que sera deslizada */
+  background-image: url('/assets/img/background.png');
   /* propriedade para repetir o fundo no eixo x */
   background-repeat: repeat-x;
   /* cria uma animacao a cada 600s linear e infinita do keyframe slideright */
-  animation: slideright 600s infinite linear;
-  -webkit-animation: slideright 600s infinite linear;
+  animation: slideright 1500s infinite linear;
+  -webkit-animation: slideright 1500s infinite linear;
   width: 100%;
   height: 200px;
 }
